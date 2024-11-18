@@ -13,26 +13,52 @@
         <input type="text" name="calc" id="calc" readonly>
         <div id="botoes">
             <button class="on">ON</button>
-            <button class="off">OFF</button>
-            <button class="c">C</button>
-            <button class="operadores">/</button>
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
-            <button class="operadores">*</button>
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-            <button class="operadores">+</button>
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button class="operadores">-</button>
-            <button>0</button>
-            <button>.</button>
-            <button class="result">=</button>
+            <button onclick="desliga()" class="off">OFF</button>
+            <button onclick="limpDisplay()" class="c">C</button>
+            <button class="operadores" onclick="insert('/')">/</button>
+            <button onclick="insert('7')">7</button>
+            <button onclick="insert('8')">8</button>
+            <button onclick="insert('9')">9</button>
+            <button onclick="insert('*')" class="operadores" >*</button>
+            <button onclick="insert('4')">4</button>
+            <button onclick="insert('5')">5</button>
+            <button onclick="insert('6')">6</button>
+            <button class="operadores" onclick="insert('+')">+</button>
+            <button onclick="insert('1')">1</button>
+            <button onclick="insert('2')">2</button>
+            <button onclick="insert('3')">3</button>
+            <button class="operadores" onclick="insert('-')">-</button>
+            <button onclick="insert('0')">0</button>
+            <button onclick="insert('.')">.</button>
+            <button class="result" onclick="calcular()">=</button>
         </div>
     </div>
 </div>
+<script>
+    const display = document.getElementById('calc')
+
+    function insert(input){
+        calc.value += input;
+    }
+
+    function calcular(){
+        try{
+            calc.value = eval(calc.value)
+        } catch(erro){
+            calc.value = 'ERRO';
+        }
+    
+}
+
+    function limpDisplay(){
+        calc.value = " "
+    }
+
+    function desliga(){
+        calc.value = " "
+        calc.style.backgroundColor='#7788998c'
+        
+    }
+</script>
 </body>
 </html>
