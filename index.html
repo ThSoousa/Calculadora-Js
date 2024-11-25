@@ -12,7 +12,7 @@
     <div id="calculadora">
         <input type="text" name="calc" id="calc" readonly>
         <div id="botoes">
-            <button class="on">ON</button>
+            <button onclick="liga()" class="on">ON</button>
             <button onclick="desliga()" class="off">OFF</button>
             <button onclick="limpDisplay()" class="c">C</button>
             <button class="operadores" onclick="insert('/')">/</button>
@@ -52,6 +52,11 @@
 
     function limpDisplay(){
         calc.value = " "
+    }
+
+    function liga(){
+        calc.value = " "
+        calc.style.backgroundColor='#d3d3d3dc'
     }
 
     function desliga(){
